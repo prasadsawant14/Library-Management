@@ -1,0 +1,53 @@
+<html>
+<head>
+
+ <link rel="stylesheet" href="css/OLMS.css">
+</head>
+<div style="border-radius: 25px;background-color:darkblue;color:white;text-align:center;padding:5px;border:3px solid black; background: rgba(54, 54, 200, 0.5)
+">
+<img src="headerlogo.png" height="42" width="42"/>
+<h1>Online Library Management</h1>
+</div>
+
+<script>
+function checkforBlank()
+{
+ if(document.getElementById('UID').value ==""){
+ alert('UID textbox cannot be left empty !!!');
+ document.getElementById('UID').style.borderColor="red";
+ return false;
+ }
+ 
+ if(document.getElementById('pwd').value ==""){
+ document.getElementById('alertpwd').innerHTML="Password field is left empty !!";
+ return false;
+}
+if((document.getElementById('UID').value.length <10)||(document.getElementById('UID').value.length >10))
+      {document.getElementById('UIDerror').innerHTML="Fake UID!!";
+ return false;
+      }
+}
+</script>
+
+
+<body background="library1.jpg">
+
+ <section class="container">
+    <div style="width:290px;background: rgba(205, 206, 262, 0.9)" class="login">
+      <h1 align="center">SignUp to System</h1>
+      <form method="post" action="Signup.php" onsubmit="return checkforBlank()">
+        <p><input type="text" id="UID" name="UID" value="" placeholder="UID"></p><span style="color:red" id="UIDerror"></span>
+        <p><input type="password" id="pwd" name="pwd" value="" placeholder="Password"></p>
+        <p><input type="text" id="name" name="name" value="" placeholder="Full Name"></p><span style="color:red" id="cpwderror"></span>
+        <p><input type="text" id="email" name="email" value="" placeholder="Email"></p>
+        <span id="alertpwd" style="color:red" ></span>
+		<p><input type="submit" name="submit" value="Submit"></p>
+        
+	</form>
+	
+    </div>
+
+     </section>
+  
+</body>
+</html>

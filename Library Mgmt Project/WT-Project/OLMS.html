@@ -1,0 +1,54 @@
+<html>
+<head>
+<div style="border-radius: 25px;background-color:darkblue;color:white;text-align:center;padding:5px;border:3px solid black; background: rgba(54, 54, 200, 0.5)
+">
+<img src="headerlogo.png" height="42" width="42"/>
+<h1>Online Library Management</h1>
+</div>
+<link rel="stylesheet" href="css/OLMS.css">
+<script>
+function checkforBlank()
+{
+ if(document.getElementById('UID').value ==""){
+ alert('UID textbox cannot be left empty !!!');
+ document.getElementById('UID').style.borderColor="red";
+ return false;
+ }
+ 
+ if(document.getElementById('pwd').value ==""){
+ document.getElementById('alertpwd').innerHTML="Password field is left empty !!";
+ return false;
+}
+}
+
+</script>
+
+<body background="library1.jpg">
+ <section class="container">
+    <div style="width:290px;background: rgba(107, 153, 159, 0.9)" class="login">
+      <h1 align="center">Login to System</h1>
+      <form method="post" action="login.php" onsubmit="return checkforBlank()">
+        <p><input type="text" id="uid" name="uid" value="" placeholder="UID"></p>
+        <p><input type="password" id="pwd" name="pwd" value="" placeholder="Password"></p>
+        <span id="alertpwd" style="color:red" ></span>
+		<p class="remember_me">
+          <label>
+            <input type="checkbox" name="remember_me" id="remember_me">
+            Remember me on this computer
+          </label>
+        </p>
+        <p class="submit"><input type="submit" id="login" name="login" value="Login"></p>
+	</form>
+	<form method="post" action="SignUp.html">
+	<p><input type="submit" name="signup" id="SignUp" value="SignUp"></p>
+	</form>
+    <form method="post" action="admin.html">
+	<p><input style="position: relative;top:-73px;left:130px"type="submit" id="admin" name="admin" value="librarian's login"></p>
+	</form>
+	<p>Forgot your password? <a href="recovery.html">Click here..!!</a>.</p>
+    </div>
+  </section>
+  
+</body>
+</head>
+</html>

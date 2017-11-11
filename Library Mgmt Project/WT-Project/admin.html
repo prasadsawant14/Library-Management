@@ -1,0 +1,64 @@
+<html>
+<head>
+<div style="border-radius: 25px;background-color:darkblue;color:white;text-align:center;padding:5px;border:3px solid black; background: rgba(54, 54, 200, 0.5)
+">
+<img src="headerlogo.png" height="42" width="42"/>
+<h1>Online Library Management</h1>
+</div>
+<link rel="stylesheet" href="css/OLMS.css">
+<script>
+function checkforBlank()
+{
+ if(document.getElementById('uname').value ==""){
+ alert('Username cannot be left empty !!!');
+ document.getElementById('uname').style.borderColor="red";
+ return false;
+ }
+ 
+ if(document.getElementById('pwd').value ==""){
+ document.getElementById('alertpwd').innerHTML="Password field is left empty !!";
+ return false;
+}
+/*if(document.getElementById('email').value=="")
+{
+  alert("Please enter the email");
+  document.getElementById('UID').focus();  
+  return false;
+} 
+ar reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+if (reg.test(document.getElementById('email').value) == false) 
+{
+  alert('Invalid email address');
+  document.getElementById('UID').focus();  
+  return false;
+}
+
+return true;
+}
+}*/
+}
+</script>
+
+<body background="library1.jpg">
+ <section  class="container">
+    <div style="width:290px;background: rgba(159,145,107, 0.9)" class="login">
+      <h1 align="center">Login to System</h1>
+      <form method="post" action="AdminLogin.php" onsubmit="return checkforBlank()">
+        <p><input type="text" id="uname" name="uname" value="" placeholder="Username"></p>
+        <p><input type="password" id="pwd" name="pwd" value="" placeholder="Password"></p>
+        <span id="alertpwd" style="color:red" ></span>
+		<p class="remember_me">
+          <label>
+            <input type="checkbox" name="remember_me" id="remember_me">
+            Remember me on this computer
+          </label>
+        </p>
+        <p class="submit"><input style="position: relative;top:3px;left:110px"type="submit" name="login" value="Login"></p>
+      </form>
+      
+    </div>
+  </section>
+</body>
+</head>
+</html>
